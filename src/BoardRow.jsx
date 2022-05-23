@@ -3,31 +3,34 @@ import Square from "./Square";
 import style from "./app.css"
 
 const BoardRow = () => {
-const renderSquare = (stateOfRow, player) => <Square name={stateOfRow} playere/>
-const firstPlayer = 'X';
 
-const [c, setPlayer] = useState(firstPlayer)
-const [stateOfRow, setStateOfRow] = useState('')
+
+const [player, setPlayer] = useState('X')
+const setRow = (mark) => {
+  return mark
+
+}
+
 
     return (
-        <div>
-        <div className="status">Next playter: {player}</div>
-        <div className="board-row">
-          {renderSquare(stateOfRow)}
-          {renderSquare(stateOfRow)}
-          {renderSquare(stateOfRow)}
-        </div>
-        <div className="board-row">
-          {renderSquare(stateOfRow)}
-          {renderSquare(stateOfRow)}
-          {renderSquare(stateOfRow)}
-        </div>
-        <div className="board-row">
-          {renderSquare(stateOfRow)}
-          {renderSquare(stateOfRow)}
-          {renderSquare(stateOfRow)}
-        </div>
+      <div>
+      <div className="status">Next playter: {player}</div>
+      <div className="board-row">
+        <Square player={player} number={0} setRow={setRow}/>
+        <Square player={player} number={1} setRow={setRow}/>
+        <Square player={player} number={2} setRow={setRow}/>
       </div>
+      <div className="board-row">
+        <Square player={player} number={3} setRow={setRow}/>
+        <Square player={player} number={4} setRow={setRow}/>
+        <Square player={player} number={5} setRow={setRow}/>
+      </div>
+      <div className="board-row">
+        <Square player={player} number={6} setRow={setRow}/>
+        <Square player={player} number={7}setRow={setRow}/>
+        <Square player={player} number={8} setRow={setRow}/>
+      </div>
+    </div>
     )
 }
 
